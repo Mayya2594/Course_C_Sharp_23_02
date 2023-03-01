@@ -5,11 +5,17 @@
 // 782 -> 8
 // 918 -> 1
 
-int TakeSecondNum(int num)
+void TakeSecondNum(int num)
 {
-    Console.WriteLine(num);
-    return num % 100 / 10;
+    if(num >= 100 && num <= 999)
+        Console.WriteLine(num % 100 / 10);
+    else if (num >= -999 && num <= -100)
+        Console.WriteLine(num % 100 / 10 * -1);
+    else
+        Console.WriteLine("Введено не трехзначное число");
 }
 
-int result = TakeSecondNum(new Random().Next(100, 1000));
-Console.WriteLine(result);
+Console.WriteLine("Введите трехзначное число:");
+int a = int.Parse(Console.ReadLine()!);
+
+TakeSecondNum(a);
